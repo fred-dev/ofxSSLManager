@@ -22,7 +22,16 @@ ofSSLManager::ofSSLManager()
 
 ofSSLManager::~ofSSLManager()
 {
-    Poco::Net::uninitializeSSL();
+    // This runs during static destruction at program exit. Since POCO 1.15
+    // the SSLManager singleton may already have shut itself down by then, and
+    // uninitializeSSL() throws; a throwing destructor would abort the app.
+    try
+    {
+        Poco::Net::uninitializeSSL();
+    }
+    catch (...)
+    {
+    }
 }
 
 
