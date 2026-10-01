@@ -1,5 +1,8 @@
 # ofxSSLManager
 
+> **About this fork:** fork of [bakercp/ofxSSLManager](https://github.com/bakercp/ofxSSLManager). This branch matches upstream. The `poco_headers_only` branch builds against [ofxPocoHeaders](https://github.com/fred-dev/ofxPocoHeaders) instead of the old ofxPoco addon.
+
+
 An [openFrameworks](http://openframeworks.cc) addon for managing SSL connections.
 
 ## Description
